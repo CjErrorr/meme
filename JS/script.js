@@ -1,10 +1,13 @@
 function goToScreen(screenId) {
-  document.querySelectorAll('.screen').forEach(screen => screen.classList.remove('active'));
-  document.getElementById(screenId).classList.add('active');
+  document.querySelectorAll('.screen').forEach(screen => screen.classList.add('hidden'));
+  document.getElementById(screenId).classList.remove('hidden');
 
   // Reset the "No" button position when entering screen 3.
   if (screenId === 'screen-3') {
-    document.getElementById('no-btn').style.position = 'static';
+    const noBtn = document.getElementById('no-btn');
+    noBtn.style.position = '';
+    noBtn.style.left = '';
+    noBtn.style.top = '';
   }
 }
 
